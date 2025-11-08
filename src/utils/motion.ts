@@ -12,3 +12,45 @@ export const circularMotion: Variants = {
     },
   },
 };
+
+export const slideInFromBottom = (delay: number) => {
+  return {
+    hidden: { y: 70, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: delay,
+        duration: 1,
+      },
+    },
+  };
+};
+
+export function slideInFromLeft(delay: number) {
+  return {
+    hidden: { x: -100, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        delay: delay,
+        duration: 1,
+      },
+    },
+  };
+}
+
+export function slideInFromRight(delay: number) {
+  return {
+    hidden: { x: 100, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        delay: delay,
+        duration: 1,
+      },
+    },
+  };
+}

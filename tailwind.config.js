@@ -6,6 +6,10 @@ module.exports = {
       fontFamily: {
         island: ["Island Moments", "cursive"],
       },
+      screens: {
+        xxs: "360px",
+        xs: "480px",
+      },
     },
   },
   plugins: [],

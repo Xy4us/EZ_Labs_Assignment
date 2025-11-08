@@ -139,7 +139,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={loading}
-          className="px-6 py-2 bg-[#F15D2B] text-white rounded disabled:opacity-60"
+          className="px-6 py-2 bg-[#F15D2B] text-white rounded-2xl disabled:opacity-60"
         >
           {loading ? "Sending..." : "Submit"}
         </button>

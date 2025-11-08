@@ -1,6 +1,5 @@
 import React from "react";
 import logo from "../assets/VFilmsLogo.png";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import menuIcon from "../assets/menu.png";
 import openIcon from "../assets/MenuOpen.png";
@@ -11,42 +10,54 @@ const NavBar = () => {
   const navItems = [
     {
       name: "Services",
-      path: "/",
+      path: "/#services",
     },
     {
       name: "Their Stories",
-      path: "/",
+      path: "/#theirStory",
     },
     {
       name: "Our Story",
-      path: "/",
+      path: "/#ourStory",
     },
     {
       name: "Varnan",
-      path: "/",
+      path: "/#varnan",
     },
     {
       name: "Let's Talk",
-      path: "/",
+      path: "/#contact",
     },
   ];
 
   return (
     <div className="w-[100vw] h-[103px] flex items-center justify-between px-5 py-4 fixed top-0 z-50 ">
       {/* Logo */}
-      <img alt="logo" src={logo} className="w-[174px] h-[63px]" />
+      <img
+        alt="logo"
+        src={logo}
+        className="md:w-[174px] md:h-[63px] sm:w-[120px] sm:h-[45px] xs:w-[90px] xs:h-[35px] xxs:w-[60px] xxs:h-[25px]"
+      />
 
-      <div className="flex items-center gap-x-12">
+      <ul className="flex items-center lg:gap-x-12 md:gap-x-5 sm:gap-x-3 xs:gap-x-2 xxs:gap-x-1 ">
         {/* Tabs */}
         {menu &&
           navItems.map((item, index) => (
-            <Link
-              to={item.path}
+            <li
               key={index}
-              className="cursor-pointer gap-x-2 ease-in-out duration-150 items-center  justify-between "
+              className="cursor-pointer lg:gap-x-2  ease-in-out duration-150 items-center  justify-between"
             >
-              {item.name}{" "}
-            </Link>
+              <a
+                className={`md:text-base lg:text-xl sm:text-sm xxs:text-[8px] ${
+                  item.name === "Let's Talk"
+                    ? "bg-[#F15D2B] text-white rounded-xl px-4 py-2"
+                    : ""
+                }`}
+                href={item.path}
+              >
+                {item.name}
+              </a>
+            </li>
           ))}
 
         <img
@@ -54,7 +65,7 @@ const NavBar = () => {
           src={menu ? openIcon : menuIcon}
           onClick={() => setMenu(!menu)}
         />
-      </div>
+      </ul>
     </div>
   );
 };
