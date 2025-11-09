@@ -94,7 +94,7 @@ Created a `.env.local` file in the **project root** (same folder as `package.jso
 
 1. Clone the repo
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/Xy4us/EZ_Labs_Assignment
    ```
 2. Install dependencies
    ```bash
